@@ -1,0 +1,113 @@
+/******************************/
+/* GENERAL REUSABLE COMPONENTS */
+/******************************/
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  border-radius: 9px;
+  font-weight: 600;
+  /* Do simple animation,change from one color to another graduallly */
+  /* 1. Change the value of a certain property or multiple properties 
+  from one value to another one */
+  /* 2. Put the transition on original state */
+  transition: background-color 1s;
+  /* transition: all 1s; */
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  color: #555;
+  /* trick to add border inside */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* create a reusable container(centered) */
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+/* create a reusable grid */
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+  /* grid-template-columns: repeat(2, 1fr); */
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-centered-vertically {
+  align-items: center;
+}
+
+/* create a helper class so it wont create conflict when we reuse the element itself*/
+/* e.g. we dont want the margin-right property when reuse an element */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: 1.6rem;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.heading-tertiary {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  margin-bottom: 3.2rem;
+}
