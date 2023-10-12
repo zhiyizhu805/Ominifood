@@ -1,32 +1,36 @@
 /******************************/
 /* GENERAL REUSABLE COMPONENTS */
 /******************************/
-
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
-  color: #fff;
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
   text-decoration: none;
   border-radius: 9px;
   font-weight: 600;
+  /* only necessary for .btn */
+  border: none;
+
   /* Do simple animation,change from one color to another graduallly */
   /* 1. Change the value of a certain property or multiple properties 
   from one value to another one */
   /* 2. Put the transition on original state */
-  transition: background-color 1s;
-  /* transition: all 1s; */
+  /* transition: background-color 1s; */
+  transition: all 1s;
 }
 
 .btn--full:link,
 .btn--full:visited {
   background-color: #e67e22;
+  color: #fff;
 }
 
 .btn--full:hover,
 .btn--full:active {
   background-color: #cf711f;
+  color: #fff;
 }
 
 .btn--outline:link,
@@ -57,6 +61,19 @@
   row-gap: 9.6rem;
   column-gap: 6.4rem;
   /* grid-template-columns: repeat(2, 1fr); */
+
+  /* having multiple grid and automatically set the margin */
+  /* margin-bottom: 9.6rem; */
+}
+
+/* having multiple grid in a section and automatically set the margin */
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+
+/* only add margin if it is not the last child inside of its parent container */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
 }
 
 .grid--2-cols {
@@ -67,14 +84,45 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .grid-centered-vertically {
   align-items: center;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
 }
 
 /* create a helper class so it wont create conflict when we reuse the element itself*/
 /* e.g. we dont want the margin-right property when reuse an element */
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+  text-align: center;
 }
 
 .heading-primary,
@@ -110,4 +158,8 @@
   font-size: 2.8rem;
   margin-bottom: 1.2rem;
   margin-bottom: 3.2rem;
+}
+
+strong {
+  font-weight: 500;
 }
