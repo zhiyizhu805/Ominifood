@@ -21,6 +21,8 @@ primary: #e67e22 #51cf66
 -Accents:
 -Grays: #333
 #555
+#767676
+#888
 
 -- 03 SHADOWS
 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
@@ -532,7 +534,7 @@ body {
 /* CTA SECTION */
 /******************************/
 .section-cta {
-  padding: 9.6rem 0;
+  padding: 4.8rem 0 12.8rem 0;
 }
 
 .cta {
@@ -546,8 +548,6 @@ body {
   /* background-image: linear-gradient(to right, #e67e22, red); */
   background-image: linear-gradient(to right bottom, #e67e22, #eb984e);
 
-  /* temp */
-  height: 50rem;
   overflow: hidden;
 }
 
@@ -611,4 +611,76 @@ body {
 
 .cta-form input::placeholder {
   color: #aaa;
+}
+
+/******************************/
+/* Footer */
+/******************************/
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #eee;
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+  /* trick for flex box,pushing one element to the end */
+  /* margin-top: auto; */
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 1.8rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
 }
