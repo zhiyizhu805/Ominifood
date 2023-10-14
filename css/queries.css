@@ -128,6 +128,9 @@
   /* MOBILE NAVIGATION */
   .button-for-mobile-nav {
     display: block;
+    /* give the button a high value so it will
+       always on top */
+    z-index: 150;
   }
 
   .main-nav {

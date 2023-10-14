@@ -233,3 +233,13 @@ body {
 strong {
   font-weight: 500;
 }
+
+.hidden-section {
+  transition: transform 1s, opacity 1s;
+  transform: translateY(9.6rem);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

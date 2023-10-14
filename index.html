@@ -15,19 +15,34 @@
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/queries.css" />
     <title>Omnifood</title>
+    <script defer src="js/script.js"></script>
   </head>
   <body>
     <header class="header">
-      <img class="logo" src="img/omnifood-logo.png" alt="omifood logo" />
+      <a href="#section-hero"
+        ><img class="logo" src="img/omnifood-logo.png" alt="omifood logo"
+      /></a>
       <nav class="main-nav">
         <ul class="main-nav-list">
           <li>
-            <a class="main-nav-link" href="#">How it works</a>
+            <a class="main-nav-link" href="#section-how">How it works</a>
           </li>
-          <li><a class="main-nav-link" href="#">Meals</a></li>
-          <li><a class="main-nav-link" href="#">Testimonials</a></li>
-          <li><a class="main-nav-link" href="#">Pricing</a></li>
-          <li><a class="main-nav-link nav-cta" href="#">Try for free</a></li>
+          <li>
+            <a class="main-nav-link" href="#section-meals">Meals</a>
+          </li>
+          <li>
+            <a class="main-nav-link" href="#section-testimonials"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a class="main-nav-link" href="#section-pricing">Pricing</a>
+          </li>
+          <li>
+            <a class="main-nav-link nav-cta" href="#section-cta"
+              >Try for free</a
+            >
+          </li>
         </ul>
       </nav>
       <!-- icon for mobile nav -->
@@ -37,7 +52,7 @@
       </button>
     </header>
     <main>
-      <section class="section-hero">
+      <section class="section-hero" id="section-hero">
         <!-- create a fixed size container -->
         <div class="hero">
           <div class="hero-text-box">
@@ -54,10 +69,12 @@
             <!-- instead of add margin-right property to the element itself. 
               We use a helper class 'margin-right-sm'. So it wont create
               conflict when we reuse the element -->
-            <a href="#" class="btn btn--full margin-right-sm"
+            <a href="#section-cta" class="btn btn--full margin-right-sm"
               >Start eating well</a
             >
-            <a href="#" class="btn btn--outline">Learn more &darr;</a>
+            <a href="#section-how" class="btn btn--outline"
+              >Learn more &darr;</a
+            >
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img src="img/customers/customer-1.jpg" alt="Customer photo" />
@@ -82,7 +99,7 @@
         </div>
       </section>
 
-      <section class="section-featured">
+      <section class="section-featured" id="section-featured">
         <div class="container">
           <h2 class="heading-featured-in">As featured in</h2>
           <div class="logos">
@@ -101,7 +118,7 @@
         </div>
       </section>
 
-      <section class="section-how">
+      <section class="section-how hidden-section" id="section-how">
         <div class="container">
           <span class="subheading">How it works</span>
           <h2 class="heading-secondary">
@@ -170,7 +187,7 @@
         </div>
       </section>
 
-      <section class="section-meals">
+      <section class="section-meals hidden-section" id="section-meals">
         <div class="container center-text">
           <span class="subheading">Sample meals</span>
           <h2 class="heading-secondary">
@@ -292,7 +309,10 @@
         </div>
       </section>
 
-      <section class="section-testimonials">
+      <section
+        class="section-testimonials hidden-section"
+        id="section-testimonials"
+      >
         <div class="testimonial-container">
           <span class="subheading">Testimonials</span>
           <h2 class="heading-secondary">
@@ -430,7 +450,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section class="section-pricing hidden-section" id="section-pricing">
         <div class="container">
           <span class="subheading">Pricing</span>
           <h2 class="heading-secondary">
@@ -546,7 +566,7 @@
         </div>
       </section>
 
-      <section class="section-cta">
+      <section class="section-cta hidden-section" id="section-cta">
         <div class="container">
           <div class="cta">
             <div class="cta-text-box">
@@ -672,14 +692,5 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script>
-      const header = document.querySelector(".header");
-      header.addEventListener("click", function (e) {
-        const target = e.target;
-        if (target.classList.contains("icon-mobile-nav")) {
-          header.classList.toggle("nav-open");
-        }
-      });
-    </script>
   </body>
 </html>
