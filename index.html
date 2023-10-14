@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/queries.css" />
     <title>Omnifood</title>
   </head>
   <body>
@@ -27,6 +30,11 @@
           <li><a class="main-nav-link nav-cta" href="#">Try for free</a></li>
         </ul>
       </nav>
+      <!-- icon for mobile nav -->
+      <button class="button-for-mobile-nav">
+        <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+        <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+      </button>
     </header>
     <main>
       <section class="section-hero">
@@ -664,5 +672,14 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script>
+      const header = document.querySelector(".header");
+      header.addEventListener("click", function (e) {
+        const target = e.target;
+        if (target.classList.contains("icon-mobile-nav")) {
+          header.classList.toggle("nav-open");
+        }
+      });
+    </script>
   </body>
 </html>

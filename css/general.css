@@ -1,3 +1,35 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* specify 1 rem = 10px */
+  /* font-size: 10px; */
+  /* However, set the font-size to a fixed number would cause a lot potential problems afterwards
+  (e.g when users trying to set the font-size of their browser to a larger number)
+     Instead, we should set it to percentage */
+
+  /* Percentage of user's browser font-size setting */
+  /* 10px/16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Rubik, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  /* Hidden all the elements that overflow the viewport  */
+  /* Hidden the mobile menu */
+
+  /* Only works if there is nothing absolutely positioned in relation to body  */
+  overflow-x: hidden;
+}
+
 /******************************/
 /* GENERAL REUSABLE COMPONENTS */
 /******************************/
@@ -117,9 +149,9 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-.grid--5-cols {
+/* .grid--5-cols {
   grid-template-columns: repeat(5, 1fr);
-}
+} */
 
 .grid-centered-vertically {
   align-items: center;
@@ -129,7 +161,8 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  font-size: 1.8rem;
+  gap: 1.2rem;
 }
 
 .list-item {

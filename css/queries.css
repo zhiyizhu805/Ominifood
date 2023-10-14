@@ -1,0 +1,235 @@
+/* In media query, 1rem will always be the default browser setting
+  rem & em do NOT depend on html font-size in media queries!
+  Instead, 1rem = 1em = 16px */
+
+/******************************/
+/* BELOW 1344PX(Smaller desktops)*/
+/******************************/
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallary {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.6rem;
+    gap: 1.6rem;
+  }
+}
+
+/******************************/
+/* BELOW 1200PX(Lanscape Tablets)*/
+/******************************/
+@media (max-width: 75em) {
+  html {
+    /* 9px / 16px = 0.5625 */
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .testimonial-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/******************************/
+/* BELOW 944PX(Lanscape Tablets)*/
+/******************************/
+/* 940/16 */
+
+@media (max-width: 59em) {
+  html {
+    /* 8px/16px = 0.5 = 50% */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-img-box {
+    text-align: center;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.6rem 3.6rem 3.6rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallary {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    /* 3/5= 60% */
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE NAVIGATION */
+  .button-for-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: hwb(0 100% 0% / 0.973);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80vh;
+    /* hide it horizontally  */
+    transform: translateX(100%);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* HIDE NAVIGATION */
+    /* ALLOW NO TRANSITION AT ALL */
+    /* display: none; */
+
+    /* 1) Hide it visually */
+    opacity: 0;
+    /* 2) Make it unaccessible to mouse and keyboard */
+    pointer-events: none;
+    /* 3) Hide it from screen readers*/
+    visibility: hidden;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+    color: #333;
+  }
+
+  /* Show the hidden menu */
+  .nav-open .main-nav {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  /* use descendant selector, only when .nav-open exist,show corresponding button */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+}
+
+/******************************/
+/* BELOW 704PX(Smaller Tablets)*/
+/******************************/
+/* 700/16 */
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  /* change footer grid from 5 cols to 2 + 3 cols
+     make it 6 cols  */
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .nav-col {
+    grid-column: span 2;
+  }
+}
+
+/* - FONT SIZE (px)
+
+
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98 
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/

@@ -8,7 +8,7 @@
 Default: 400 500 600 700
 
 - LINE HEIGHT 
-Default: 1/1.05/1.6/0.5/0.75
+Default: 1/1.05/1.6/1.2/0.5/0.75
 
 SPACING SYSTEM (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
@@ -34,30 +34,6 @@ Default: 9px 11px
 
 */
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* specify 1 rem = 10px */
-  /* font-size: 10px; */
-  /* However, set the font-size to a fixed number would cause a lot potential problems afterwards
-  (e.g when users trying to set the font-size of their browser to a larger number)
-     Instead, we should set it to percentage */
-
-  /* Percentage of user's browser font-size setting */
-  /* 10px/16px = 0.625 = 62.5% */
-  font-size: 62.5%;
-}
-
-body {
-  font-family: Rubik, sans-serif;
-  line-height: 1;
-  font-weight: 400;
-  color: #555;
-}
 /******************************/
 /* HEADER */
 /******************************/
@@ -74,13 +50,14 @@ body {
   height: 9.6rem;
   /* still use padding but only horizontal*/
   padding: 0 4.8rem;
+  position: relative;
 }
 
 .main-nav-list {
   display: flex;
   flex-direction: row;
   list-style: none;
-  gap: 1.6rem;
+  gap: 4.8rem;
   align-items: center;
 }
 
@@ -108,6 +85,24 @@ body {
 .main-nav-link.nav-cta:hover {
   background-color: #cf711f;
 }
+
+/* MOBILE ICON */
+.button-for-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  color: #333;
+  height: 4.8rem;
+  width: 4.8rem;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
 /******************************/
 /* HERO SECTION */
 /******************************/
@@ -116,6 +111,21 @@ body {
   background-color: #fdf2e9;
   padding: 4.8rem 0;
 }
+
+/* when there is a conflict in media queries
+    📢 The last one will be applied */
+/* @media (max-width: 1200px) {
+  .section-hero {
+    background-color: orangered;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-hero {
+    border: 50px dashed blue;
+    background-color: green;
+  }
+} */
 
 .hero {
   margin: 0 auto;
