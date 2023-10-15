@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,6 +14,10 @@
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/queries.css" />
     <title>Omnifood</title>
+    <script
+      defer
+      src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
+    ></script>
     <script defer src="js/script.js"></script>
   </head>
   <body>
@@ -90,11 +93,20 @@
             </div>
           </div>
           <div class="hero-img-box">
-            <img
-              src="img/hero.png"
-              alt="woman enjoy food,meals in storage container,and food bowls on a table"
-              class="hero-img"
-            />
+            <!-- select two different images here and let browser decide
+                 which one works best .
+                e.g if webp type is not supported in some browser.the browser
+                    will replace the src with the another one-->
+            <picture>
+              <source srcset="img/hero_min.webp" type="image/webp" />
+              <source srcset="img/hero.png" type="image/png" />
+              <source />
+              <img
+                src="img/hero_min.webp"
+                alt="woman enjoy food,meals in storage container,and food bowls on a table"
+                class="hero-img"
+              />
+            </picture>
           </div>
         </div>
       </section>
