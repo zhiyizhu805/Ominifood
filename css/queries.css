@@ -134,7 +134,7 @@
   }
 
   .main-nav {
-    background-color: hwb(0 100% 0% / 0.861);
+    background-color: rgba(255, 255, 255, 0.951);
 
     /* if no prefix used will not be supported in safari */
     /* backdrop-filter: blur(10px); */

@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Omnifood is an AI powered food subscription that will make you eat healthy again,
+      365 days per year.It's tailored to your personal tastes and nutritional needs"
+    />
     <!-- Always include this line of code!!! -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,10 +15,17 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rubik:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- replace default favicon for browser -->
+    <link rel="icon" href="img/favicon_meta.png" />
+    <!-- adding the website as an icon to ios phone screen-->
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <!-- same as above but for android-->
+    <link rel="manifest" href="manifest.webmanifest" />
+
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/queries.css" />
-    <title>Omnifood</title>
+    <title>Omnifood &mdash; Never cook again!</title>
     <script
       defer
       src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"
@@ -49,7 +61,7 @@
         </ul>
       </nav>
       <!-- icon for mobile nav -->
-      <button class="button-for-mobile-nav">
+      <button class="button-for-mobile-nav" aria-label="button-for-mobile-nav">
         <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
       </button>
@@ -618,7 +630,9 @@
                     <option value="facebook">Facebook</option>
                   </select>
                 </div>
-                <button class="btn btn--form">Sign up now</button>
+                <button class="btn btn--form" aria-label="button-to-form">
+                  Sign up now
+                </button>
               </form>
             </div>
             <!-- use role:"img" and describe aria-label for accessibility -->
