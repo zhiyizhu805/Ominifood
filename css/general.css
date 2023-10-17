@@ -245,4 +245,5 @@ strong {
 .hidden {
   visibility: hidden;
   opacity: 0;
+  transform: translateY(0.8rem);
 }

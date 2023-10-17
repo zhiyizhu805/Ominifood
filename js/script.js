@@ -10,28 +10,11 @@ header.addEventListener("click", function (e) {
 });
 
 ///////////////////////////////////////////////////////////
-// Implementing smooth scrolling using morden way:
-
-const allLinks = document.querySelectorAll("a:link");
-
-allLinks.forEach(function (link) {
-  link.addEventListener("click", function (e) {
-    console.log(e.target);
-    e.preventDefault();
-    const id = link.getAttribute("href");
-    const idDomElemnt = document.querySelector(id);
-    idDomElemnt.scrollIntoView({ behavior: "smooth" });
-    // Close mobile navigation after clicking
-    if (link.classList.contains("main-nav-link"))
-      header.classList.toggle("nav-open");
-  });
-});
-
-///////////////////////////////////////////////////////////
 // Implementing sticky navigation bar
 // 1. header element selected above
 // 2.calculate header contgainer's height dynamically
 const headerHeight = header.getBoundingClientRect().height;
+console.log("headerHeight", headerHeight);
 const sectionHero = document.querySelector("#section-hero");
 // 3. callback function for the observer
 const stickyNav = function (entries) {
@@ -48,7 +31,7 @@ const stickyNav = function (entries) {
 // 4. options
 const options = new IntersectionObserver(stickyNav, {
   root: null,
-  threshold: 0,
+  threshold: [0],
   rootMargin: `-${headerHeight}px`,
 });
 
@@ -74,6 +57,38 @@ const observerReveal = new IntersectionObserver(reavealSection, {
 hiddenSections.forEach(function (section) {
   section.classList.add("hidden");
   observerReveal.observe(section);
+});
+
+///////////////////////////////////////////////////////////
+// Implementing smooth scrolling using morden way:
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    console.log(e.target);
+    e.preventDefault();
+    const id = link.getAttribute("href");
+    const idDomElemnt = document.querySelector(id);
+
+    // offset not available
+    idDomElemnt.scrollIntoView({
+      behavior: "smooth",
+    });
+    // const scrollIntoViewWithOffset = (idDomElemnt, offset) => {
+    //   window.scrollTo({
+    //     behavior: "smooth",
+    //     top:
+    //       document.querySelector(idDomElemnt).getBoundingClientRect().top -
+    //       document.body.getBoundingClientRect().top -
+    //       offset,
+    //   });
+    // };
+    scrollIntoViewWithOffset(id, headerHeight);
+    // Close mobile navigation after clicking
+    if (link.classList.contains("main-nav-link"))
+      header.classList.toggle("nav-open");
+  });
 });
 
 ///////////////////////////////////////////////////////////
