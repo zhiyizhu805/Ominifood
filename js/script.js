@@ -75,16 +75,6 @@ allLinks.forEach(function (link) {
     idDomElemnt.scrollIntoView({
       behavior: "smooth",
     });
-    // const scrollIntoViewWithOffset = (idDomElemnt, offset) => {
-    //   window.scrollTo({
-    //     behavior: "smooth",
-    //     top:
-    //       document.querySelector(idDomElemnt).getBoundingClientRect().top -
-    //       document.body.getBoundingClientRect().top -
-    //       offset,
-    //   });
-    // };
-    scrollIntoViewWithOffset(id, headerHeight);
     // Close mobile navigation after clicking
     if (link.classList.contains("main-nav-link"))
       header.classList.toggle("nav-open");
