@@ -54,14 +54,25 @@ Default: 9px 11px
   transition: all 0.5s ease-in-out;
 }
 
-.sticky {
+/* since header is not the parent class of section-hero
+   add the sticky class to their common parent: body */
+.sticky .header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
   height: 8rem;
+  padding-left: 0;
+  padding-right: 0;
   opacity: 1;
   box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.1);
+}
+
+/* because the navigation bar has been taken out of normal flow
+   so there will be a quick jump because of the gap.
+   Fill in the gap*/
+.sticky .section-hero {
+  margin-top: 8rem;
 }
 
 .main-nav-list {

@@ -14,16 +14,17 @@ header.addEventListener("click", function (e) {
 // 1. header element selected above
 // 2.calculate header contgainer's height dynamically
 const headerHeight = header.getBoundingClientRect().height;
-console.log("headerHeight", headerHeight);
+const body = document.querySelector("body");
+// console.log("headerHeight", headerHeight);
 const sectionHero = document.querySelector("#section-hero");
 // 3. callback function for the observer
+
 const stickyNav = function (entries) {
   entries.forEach((entry) => {
-    // console.log(entry);
     if (!entry.isIntersecting) {
-      header.classList.add("sticky");
+      body.classList.add("sticky");
     } else {
-      header.classList.remove("sticky");
+      body.classList.remove("sticky");
     }
   });
 };
@@ -31,8 +32,10 @@ const stickyNav = function (entries) {
 // 4. options
 const options = new IntersectionObserver(stickyNav, {
   root: null,
-  threshold: [0],
-  rootMargin: `-${headerHeight}px`,
+  threshold: 0,
+  // This is the root margin, which is the distance between the root and the target element.
+  // -80px means the target element will be 80px above the root element.
+  rootMargin: `-80px`,
 });
 
 const observer = new IntersectionObserver(stickyNav, options);
@@ -44,7 +47,7 @@ const hiddenSections = document.querySelectorAll(".hidden-section");
 // 3.call-back
 const reavealSection = function (entries) {
   const [entry] = entries;
-  console.log(entry);
+  // console.log(entry);
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("hidden");
 };
@@ -66,15 +69,16 @@ const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    console.log(e.target);
     e.preventDefault();
     const id = link.getAttribute("href");
-    const idDomElemnt = document.querySelector(id);
-
-    // offset not available
-    idDomElemnt.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (id === "#") window.scrollTo({ top: 0, behavior: "smooth" });
+    if (id !== "#" && id.startsWith("#")) {
+      const idDomElemnt = document.querySelector(id);
+      // offset not available
+      idDomElemnt.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
     // Close mobile navigation after clicking
     if (link.classList.contains("main-nav-link"))
       header.classList.toggle("nav-open");
