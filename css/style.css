@@ -57,6 +57,8 @@ Default: 9px 11px
 /* since header is not the parent class of section-hero
    add the sticky class to their common parent: body */
 .sticky .header {
+  background-color: #fff;
+  opacity: 0.97;
   position: fixed;
   top: 0;
   width: 100%;
