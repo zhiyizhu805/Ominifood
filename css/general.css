@@ -237,13 +237,15 @@ strong {
   font-weight: 500;
 }
 
+/* means the section needs to be hidden 
+note: should not contain footer! */
 .hidden-section {
   transition: transform 1s, opacity 1s;
-  transform: translateY(9.6rem);
 }
 
+/* the actual hidden class */
 .hidden {
   visibility: hidden;
   opacity: 0;
-  transform: translateY(0.8rem);
+  transform: translateY(8rem);
 }
